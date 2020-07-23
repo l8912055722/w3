@@ -1,0 +1,390 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img{
+    max-width: 100%;
+    height: auto;
+  }
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/* ----------------------------reset---------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap');
+:root{
+    --main-color:#3F5D45;
+    --secondary-color:#EAF0ED;
+    --footer-color:#FFE180;
+}
+*,body{
+    font-family: '微軟正黑體',sans-serif;
+}
+.container{
+    max-width: 940px;
+    margin: 0 auto;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hamLogo{
+    display: none;
+}
+.mobLogo{
+    display: none;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:35px 0 ;
+    width: 33%;
+    
+}
+.menu img{
+    padding-left:19px;
+}
+.menu a{
+    display: block;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--main-color)
+}
+.banner{
+    margin-bottom: 60px;
+}
+/* -----------------------header響應式----------------------- */
+@media(max-width:768px){
+    .container{
+        width: 100%;
+    }
+    .header{
+        justify-content: space-around;
+    }
+    .logo{
+        display: none;
+    }
+    .menu{
+        justify-content: flex-end;
+        width: auto;
+    }
+    .menu img{
+        padding: 0;
+    }
+    .hamLogo{
+        display: block;
+    }
+    .mobLogo{
+        display: block;
+        width: 40%;
+    }
+    .link{
+        display: none;
+    }
+}
+/* -----------------------header----------------------- */
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+.types{
+    width: 32%;
+    text-align: center;
+}
+.types h3{
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background: var(--main-color);
+    color: var(--secondary-color);
+    line-height: 33px;
+    font-size: 24px;
+}
+.types li{
+    border: 1px solid var(--secondary-color);
+}
+.types a{
+    display: block;
+    text-decoration: none;
+    line-height: 33px;
+    color: var(--main-color);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.types li:hover{
+    background: var(--secondary-color);
+}
+/* -----------------------types----------------------- */
+.product{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 66%;
+}
+.desser-img{
+    position: relative;
+}
+.desser-img p{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    writing-mode: vertical-lr;
+    letter-spacing: 5px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    color: var(--secondary-color);
+    background-color: var(--main-color);
+    line-height: 20px;
+}
+.favorite{
+    position: absolute;
+    top: 19px;
+    right: 22px;
+}
+.desser-text{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    margin-bottom: 20px;
+}
+.desser-text h3 , .desser-text span{
+    font-size: 20px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    line-height: 24px;
+    color: var(--main-color);
+    line-height: 20px;
+}
+.desser-text h3{
+    width: 60%;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-align: center;
+    border-left: 1px solid var(--secondary-color);
+}
+.desser-text span{
+    width: 40%;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-left: 1px solid var(--secondary-color);
+    border-right: 1px solid var(--secondary-color);
+}
+.shopping{
+    width: 100%;
+    border: none;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background: var(--secondary-color);
+    color: var(--main-color);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* -----------------------product響應式----------------------- */
+@media(max-width:768px){
+    .content{
+        flex-direction: column;
+    }
+    .types{
+        width: 100%;
+    }
+    .product{
+       width: 100%;
+       justify-content: center;
+       margin-top: 30px;
+    }
+    .desser{
+        margin-bottom: 10px;
+    }
+}
+/* -----------------------product----------------------- */
+.page{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.page li{
+    box-sizing: border-box;
+    width: 60px;
+    border: 1px solid var(--secondary-color);
+    margin: 0px 0px 0px -1px;
+    text-align: center;
+}
+.pageNum {
+    display: block;
+    background: #ffffff;
+    color: var(--main-color);
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 20px;
+    padding: 20px 0;
+}
+.pageLeft img,.pageRight img{
+    padding: 18px 0;
+}
+.pageNum:hover{
+    background: var(--main-color);
+    color: var(--secondary-color);
+}
+/* -----------------------page響應式----------------------- */
+@media(max-width:768px){
+    .page{
+    width: 100%;
+    justify-content: center;
+    }
+}
+/* -----------------------page----------------------- */
+.email{
+    background: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 43px 20%;
+}
+.email ul{
+    display: flex;
+    align-items: center;
+}
+.email h2{
+    font-size: 24px;
+    line-height: 29px;
+    padding-left: 20px;
+    color: var(--secondary-color);
+}
+form{
+    display: flex;
+}
+.forMail{
+    background: var(--secondary-color) url(https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/mail-24px.png?raw=true) no-repeat 20px 20px;
+    padding: 16px 30px 16px 64px;
+    border: none;
+    line-height: 26px;
+}
+.forWard{
+    border: none;
+    padding: 17px 20px;
+    background-color: var(--footer-color);
+}
+/* -----------------------email響應式----------------------- */
+@media(max-width:768px){
+    .email{
+        flex-direction: column;
+        padding: 35px 0;
+    }
+    form{
+        margin-top: 30px ;
+    }
+}
+/* -----------------------email----------------------- */
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background: var(--secondary-color);
+    padding: 30px 20%;
+}
+.dataLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.service{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+    color: var(--main-color);
+}
+.dataRight{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: 'Noto Serif TC', serif;
+    color: var(--main-color);
+}
+.dataRight h2{
+    font-size: 20px;
+    line-height: 40px;
+    text-indent: 10px;
+    font-weight: bold;
+    writing-mode: vertical-lr;
+    letter-spacing: 6px;
+}
+.dataRight p{
+    margin-top: 46px;
+    font-size: 16px;
+    line-height: 19px;
+}
+.web{
+    display: flex;
+    margin-top: 30px;
+}
+.web li{
+    padding-right: 8px;
+}
+/* -----------------------footer響應式----------------------- */
+@media(max-width:768px){
+    .footer{
+        flex-direction: column;
+        padding: 30px;
+    }
+    .dataRight h2{
+        display: none;
+    }
+    .dataRight{
+        align-items: flex-start;
+    }
+    .connect{
+        margin-top: 40px;
+    }
+}
