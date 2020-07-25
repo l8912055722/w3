@@ -82,7 +82,7 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:35px 0 ;
+    padding:25px 0 ;
     width: 33%;
     
 }
@@ -92,6 +92,7 @@ img{
 .menu a{
     display: block;
     line-height: 24px;
+    padding: 10px 0;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
@@ -103,7 +104,7 @@ img{
 /* -----------------------header響應式----------------------- */
 @media(max-width:768px){
     .container{
-        width: 100%;
+        width: 375px;
     }
     .header{
         justify-content: space-around;
@@ -112,7 +113,6 @@ img{
         display: none;
     }
     .menu{
-        justify-content: flex-end;
         width: auto;
     }
     .menu img{
@@ -148,6 +148,7 @@ img{
 }
 .types li{
     border: 1px solid var(--secondary-color);
+    transition: .4s;
 }
 .types a{
     display: block;
@@ -180,7 +181,6 @@ img{
     letter-spacing: 5px;
     padding: 10px;
     font-size: 16px;
-    text-align: center;
     color: var(--secondary-color);
     background-color: var(--main-color);
     line-height: 20px;
@@ -227,9 +227,14 @@ img{
     padding-bottom: 16px;
     background: var(--secondary-color);
     color: var(--main-color);
+    transition: .4s;
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
+}
+.shopping:hover{
+    background: var(--main-color);
+    color: var(--secondary-color);
 }
 /* -----------------------product響應式----------------------- */
 @media(max-width:768px){
@@ -270,6 +275,7 @@ img{
     text-decoration: none;
     line-height: 20px;
     padding: 20px 0;
+    transition: .4s;
 }
 .pageLeft img,.pageRight img{
     padding: 18px 0;
@@ -306,11 +312,18 @@ img{
 form{
     display: flex;
 }
+.mailIcon{
+    box-sizing: border-box;
+    padding: 18px 20px;
+    width: 64px;
+    height: 58px;
+    background: var(--secondary-color);
+}
 .forMail{
-    background: var(--secondary-color) url(https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/mail-24px.png?raw=true) no-repeat 20px 20px;
-    padding: 16px 30px 16px 64px;
+    padding: 16px 25px 16px ;
     border: none;
     line-height: 26px;
+    background: var(--secondary-color);
 }
 .forWard{
     border: none;
@@ -321,18 +334,22 @@ form{
 @media(max-width:768px){
     .email{
         flex-direction: column;
-        padding: 35px 0;
+        padding: 40px 0;
     }
     form{
         margin-top: 30px ;
     }
 }
 /* -----------------------email----------------------- */
+.footerTotal{
+    background: var(--secondary-color);
+    padding: 25px 0;
+}
 .footer{
     display: flex;
     justify-content: space-between;
-    background: var(--secondary-color);
-    padding: 30px 20%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .dataLeft{
     display: flex;
@@ -375,6 +392,7 @@ form{
 /* -----------------------footer響應式----------------------- */
 @media(max-width:768px){
     .footer{
+        width: 100%;
         flex-direction: column;
         padding: 30px;
     }
