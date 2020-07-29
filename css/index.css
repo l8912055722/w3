@@ -71,9 +71,14 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 .hamLogo{
     display: none;
+    border: none;
+    max-width: 100%;
+    background: transparent;
+    cursor: pointer;
 }
 .mobLogo{
     display: none;
@@ -82,21 +87,26 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:25px 0 ;
-    width: 33%;
-    
+    max-height: 0px;
+    width: 70%;
 }
-.menu img{
+.cartIco img{
     padding-left:19px;
 }
-.menu a{
+.menu-link, .cartIco{
     display: block;
     line-height: 24px;
-    padding: 10px 0;
+    padding:25px 0 ;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
     color: var(--main-color)
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 33%;
 }
 .banner{
     margin-bottom: 60px;
@@ -104,29 +114,53 @@ img{
 /* -----------------------header響應式----------------------- */
 @media(max-width:768px){
     .container{
-        width: 375px;
+        width: 100%;
     }
     .header{
         justify-content: space-around;
     }
+    nav{
+        width: 100%;
+        justify-content: space-around;
+    }
+    nav .active{
+        max-height: 200px;
+      }
     .logo{
         display: none;
     }
-    .menu{
-        width: auto;
+    .menu-link{
+        padding: 22px 0;
+        text-align: center;
     }
-    .menu img{
+    .menu-item{
+        width: 100%;
+    }
+    .menu-item:hover{
+        background: var(--secondary-color);
+    }
+    .menu{
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        transition: all 0.8s;
+        overflow: hidden;
+        background: white;
+        flex-direction: column;
+    }
+    .cartIco img{
         padding: 0;
     }
     .hamLogo{
         display: block;
     }
+    .hamLogo:focus{
+        outline: 0;
+    }
     .mobLogo{
         display: block;
         width: 40%;
-    }
-    .link{
-        display: none;
     }
 }
 /* -----------------------header----------------------- */
@@ -165,10 +199,13 @@ img{
 }
 /* -----------------------types----------------------- */
 .product{
+    width: 66%;
+}
+.desser{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 66%;
+
 }
 .desser-img{
     position: relative;
@@ -243,14 +280,14 @@ img{
     }
     .types{
         width: 100%;
+        margin-bottom: 30px;
     }
     .product{
        width: 100%;
-       justify-content: center;
-       margin-top: 30px;
     }
     .desser{
-        margin-bottom: 10px;
+        justify-content: space-around;
+        align-items: center;
     }
 }
 /* -----------------------product----------------------- */
@@ -343,13 +380,13 @@ form{
 /* -----------------------email----------------------- */
 .footerTotal{
     background: var(--secondary-color);
-    padding: 25px 0;
 }
 .footer{
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 940px;
     margin: 0 auto;
+    padding: 30px 0;
 }
 .dataLeft{
     display: flex;
@@ -393,16 +430,22 @@ form{
 @media(max-width:768px){
     .footer{
         width: 100%;
-        flex-direction: column;
         padding: 30px;
     }
-    .dataRight h2{
-        display: none;
+    .connect{
+        margin-top: 40px;
+    }
+}
+@media(max-width:375px){
+    .footer{
+        width: 100%;
+        flex-direction: column;
+        padding: 30px;
     }
     .dataRight{
         align-items: flex-start;
     }
-    .connect{
-        margin-top: 40px;
+    .dataRight h2{
+        display: none;
     }
 }
